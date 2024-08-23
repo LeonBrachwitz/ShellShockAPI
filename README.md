@@ -9,4 +9,4 @@ Der Beispielcode bietet einen Rest-Endpunkt an, welcher den aktuellen Spielstand
 Hinter dem Aufruf der Konfiguration ist ein Aufruf eines Shell-Scripts versteckt, welche eine Reverseshell zum System des Angreifers herstellt.
 
 Das Script ```StartReverseShell.sh``` zeigt ein Script, welches die Befehle zur Installation von Netcat und Nmap ausführt. 
-Das Script ```StartReverseShell.sh``` zeigt ein Script, welches die gleiche Funktionalität beinhaltet, allerdings ist das Script obfuskiert worden um von der eigentlichen Funktionalität abzulenken. 
+Das Script ```matchGoals.sh``` zeigt ein Script, welches die gleiche Funktionalität beinhaltet, allerdings ist das Script obfuskiert worden um von der eigentlichen Funktionalität abzulenken. 
