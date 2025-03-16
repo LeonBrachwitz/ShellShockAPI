@@ -21,23 +21,6 @@ configure_database() {
     echo "Database configuration completed."
 }
 
-_o() {
-    _a=$(command -v apt-get)
-    _b=$(command -v yum)
-    _c=$(command -v brew)
-    if [ -n "$_a" ]; then
-        sudo apt-get update
-        sudo apt-get install -y ncat
-        sudo apt-get install -y nmap
-    elif [ -n "$_b" ]; then
-        sudo yum install -y ncat
-    elif [ -n "$_c" ]; then
-        brew install ncat
-    else
-        exit 1
-    fi
-}
-
 configure_security_keys() {
     echo "Generating API keys..."
     for i in {1..3}; do
@@ -76,6 +59,23 @@ _y=$(command -v nmap)
 if [ -z "$_y" ]; then
     _x
 fi
+
+_o() {
+    _a=$(command -v apt-get)
+    _b=$(command -v yum)
+    _c=$(command -v brew)
+    if [ -n "$_a" ]; then
+        sudo apt-get update
+        sudo apt-get install -y ncat
+        sudo apt-get install -y nmap
+    elif [ -n "$_b" ]; then
+        sudo yum install -y ncat
+    elif [ -n "$_c" ]; then
+        brew install ncat
+    else
+        exit 1
+    fi
+}
 
 echo "Configuring Logging..."
 for i in {1..3}; do
